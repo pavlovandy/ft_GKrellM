@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   TerminalDisplay.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apavlov <apavlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/12 13:40:54 by apavlov           #+#    #+#             */
-/*   Updated: 2019/10/12 20:35:23 by apavlov          ###   ########.fr       */
+/*   Created: 2019/10/12 17:33:11 by apavlov           #+#    #+#             */
+/*   Updated: 2019/10/12 18:00:33 by apavlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./other/Sdl.hpp"
-#include <ctime>
-#include <iostream>
-#include "./modules/OSInfoModule.hpp"
-#include "./modules/TimeModule.hpp"
-#include "./modules/UserNameModule.hpp"
+#ifndef TERMINALDISPLAY_HPP
+# define TERMINALDISPLAY_HPP
 
-int		main( int argc, char ** argv ) {
-	Sdl	sdl;
-	SDL_UpdateWindowSurface(sdl.win);
+# include "ADisplay.hpp"
 
-	UserNameModule	osmodule;
-	return (0);
-}
+class TerminalDisplay : public ADisplay {
+	private:
+		TerminalDisplay( TerminalDisplay const & );
+		TerminalDisplay &	operator=( TerminalDisplay const & );
+
+	public:
+		TerminalDisplay();
+		~TerminalDisplay();
+
+		void	display();
+};
+
+#endif

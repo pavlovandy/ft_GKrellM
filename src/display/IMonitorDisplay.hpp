@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   IMonitorDisplay.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apavlov <apavlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/12 13:40:54 by apavlov           #+#    #+#             */
-/*   Updated: 2019/10/12 20:35:23 by apavlov          ###   ########.fr       */
+/*   Created: 2019/10/12 14:57:39 by apavlov           #+#    #+#             */
+/*   Updated: 2019/10/12 17:46:13 by apavlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./other/Sdl.hpp"
-#include <ctime>
-#include <iostream>
-#include "./modules/OSInfoModule.hpp"
-#include "./modules/TimeModule.hpp"
-#include "./modules/UserNameModule.hpp"
+#ifndef IMONITORDISPLAY_HPP
+# define IMONITORDISPLAY_HPP
 
-int		main( int argc, char ** argv ) {
-	Sdl	sdl;
-	SDL_UpdateWindowSurface(sdl.win);
+class IMonitorDisplay {
+	public:
+		virtual 		~IMonitorDisplay() {}
+		virtual void	display() = 0;
+};
 
-	UserNameModule	osmodule;
-	return (0);
-}
+#endif
