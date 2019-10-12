@@ -6,7 +6,7 @@
 #    By: apavlov <apavlov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 13:27:10 by apavlov           #+#    #+#              #
-#    Updated: 2019/10/12 13:50:43 by apavlov          ###   ########.fr        #
+#    Updated: 2019/10/12 14:01:03 by apavlov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,10 @@ FLAGS =  -Wall -Wextra -Werror -Wconversion
 NAME = ft_gkrellm
 
 SRC = main.cpp
+
+HEAD = main.hpp
+
+HEADERS = $(addprefix $(SRC_DIR), $(HEAD))
 
 SRC_DIR = ./src/
 
@@ -57,7 +61,7 @@ obj_dir:
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(FRAMEWORKS) $(OBJ) -o $(NAME) $(LINKS)
 
-$(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
+$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp $(HEADERS)
 	$(CC) $(FLAGS) $(INCLUDES) -o $@ -c $<
 
 clean:
