@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TerminalDisplay.hpp                                :+:      :+:    :+:   */
+/*   functions.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apavlov <apavlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/12 17:33:11 by apavlov           #+#    #+#             */
-/*   Updated: 2019/10/12 23:18:09 by apavlov          ###   ########.fr       */
+/*   Created: 2019/10/13 01:11:58 by apavlov           #+#    #+#             */
+/*   Updated: 2019/10/13 05:13:08 by apavlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TERMINALDISPLAY_HPP
-# define TERMINALDISPLAY_HPP
+#ifndef FUNCTIONS_HPP
+# define FUNCTIONS_HPP
 
-# include "ADisplay.hpp"
+# include <cstdio>
+# include <string>
+# include <iostream>
+# include "terminal_colors.hpp"
 # include <ncurses.h>
+# include "../modules/IMonitorModule.hpp"
 
-class TerminalDisplay : public ADisplay {
-	private:
-		TerminalDisplay( TerminalDisplay const & );
-		TerminalDisplay &	operator=( TerminalDisplay const & );
-
-	public:
-		TerminalDisplay();
-		~TerminalDisplay();
-
-		void	display();
-};
+std::string		readInfo( FILE * f );
+void	displayString(  int & x, std::string str, int color );
 
 #endif

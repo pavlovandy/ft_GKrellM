@@ -6,7 +6,7 @@
 /*   By: apavlov <apavlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 17:26:29 by apavlov           #+#    #+#             */
-/*   Updated: 2019/10/12 20:31:46 by apavlov          ###   ########.fr       */
+/*   Updated: 2019/10/13 07:12:25 by apavlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class UserNameModule : public IMonitorModule {
 	private:
 		std::string		_user_name;
+		SDL_Surface*	_name_surr;
 	
 	public:
 		UserNameModule();
@@ -26,8 +27,8 @@ class UserNameModule : public IMonitorModule {
 		UserNameModule &	operator=( UserNameModule const & );
 		~UserNameModule();
 		std::string		getUserName();
-		void	displayModule( Sdl & sdl );
-		void	displayModule( );
+		void	displayModule( int & x, Sdl * sdl, TTF_Font * f );
+		void	displayModule( int & x  );
 };
 
 #endif

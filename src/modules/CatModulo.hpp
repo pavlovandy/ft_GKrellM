@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   OSInfoModule.hpp                                   :+:      :+:    :+:   */
+/*   CatModulo.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apavlov <apavlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/12 17:26:29 by apavlov           #+#    #+#             */
-/*   Updated: 2019/10/13 07:13:02 by apavlov          ###   ########.fr       */
+/*   Created: 2019/10/13 03:57:20 by apavlov           #+#    #+#             */
+/*   Updated: 2019/10/13 07:13:43 by apavlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OSINFOMODULE_HPP
-# define OSINFOMODULE_HPP
+#ifndef CATMODULO_HPP
+# define CATMODULO_HPP
 
 # include "IMonitorModule.hpp"
-# include <fstream>
 
-class OSInfoModule : public IMonitorModule {
+class CatModulo : public IMonitorModule
+{
 	private:
-		std::string		_os_name;
-		std::string		_os_version;
-		std::string		_os_build;
-		
+		static std::string		_cat;
+		SDL_Surface		*_cat_surface;
+
 	public:
-		OSInfoModule();
-		OSInfoModule( OSInfoModule const & );
-		OSInfoModule &	operator=( OSInfoModule const & );
-		~OSInfoModule();
+		CatModulo();
+		CatModulo( SDL_Surface *cat_surface );
+		CatModulo( CatModulo const & );
+		CatModulo &	operator=( CatModulo const & );
+		~CatModulo();
+		
 		void	displayModule( int & x, Sdl * sdl, TTF_Font * f );
 		void	displayModule( int & x  ) ;
 };
+
+
+
+
 
 #endif

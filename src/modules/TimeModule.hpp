@@ -6,7 +6,7 @@
 /*   By: apavlov <apavlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 17:29:04 by apavlov           #+#    #+#             */
-/*   Updated: 2019/10/12 20:30:52 by apavlov          ###   ########.fr       */
+/*   Updated: 2019/10/13 07:12:49 by apavlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ class TimeModule : public IMonitorModule {
 		std::string	getData();
 		std::string	getTime();
 		std::string	getDayOfWeek();
-		void	displayModule( Sdl & sdl );
-		void	displayModule( );
+		void	displayModule( int & x, Sdl * sdl, TTF_Font * f );
+		void	displayModule( int & x  );
 };
 
 #endif

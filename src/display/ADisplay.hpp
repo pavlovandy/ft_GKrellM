@@ -6,7 +6,7 @@
 /*   By: apavlov <apavlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 17:37:08 by apavlov           #+#    #+#             */
-/*   Updated: 2019/10/12 18:05:15 by apavlov          ###   ########.fr       */
+/*   Updated: 2019/10/13 07:08:02 by apavlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "IMonitorDisplay.hpp"
 # include <list>
 # include "../modules/IMonitorModule.hpp"
+
+class IMonitorModule;
 
 class ADisplay : public IMonitorDisplay
 {

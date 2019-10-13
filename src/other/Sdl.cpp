@@ -6,7 +6,7 @@
 /*   By: apavlov <apavlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 14:13:30 by apavlov           #+#    #+#             */
-/*   Updated: 2019/10/12 18:21:56 by apavlov          ###   ########.fr       */
+/*   Updated: 2019/10/13 08:50:49 by apavlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ Sdl::Sdl() {
 		std::cerr << TRED << SDL_GetError() << COLOR_OFF << std::endl;
 		exit(1);
 	}
+	if (TTF_Init() == -1) {
+		std::cout << "Coudnt init font" << std::endl;
+		exit(1);
+	}
 }
 
 Sdl::Sdl( unsigned int x, unsigned int y, unsigned int w, unsigned int h ) : w(w), h(h) {
@@ -58,6 +62,10 @@ Sdl::Sdl( unsigned int x, unsigned int y, unsigned int w, unsigned int h ) : w(w
 		std::cerr << TRED << SDL_GetError() << COLOR_OFF << std::endl;
 		exit(1);
 	}
+	if (TTF_Init() == -1) {
+		std::cout << "Coudnt init font" << std::endl;
+		exit(1);
+	}
 }
 
 Sdl::~Sdl() {
@@ -65,8 +73,9 @@ Sdl::~Sdl() {
 	win_surr = 0;
 	SDL_DestroyWindow(win);
 	win = 0;
+	TTF_Quit();
 	SDL_Quit();
 }
 
-const int	Sdl::default_win_w = 100;
+const int	Sdl::default_win_w = 200;
 const int	Sdl::default_win_h = 800;
